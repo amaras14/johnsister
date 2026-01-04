@@ -34,7 +34,7 @@ navLinks.forEach(link =>
 
 /*===== HOME TYPED JS =====*/
 const typedHome = new Typed('#home-typed', {
-  strings: ['SEO Specialist','Web Developer','Content Writer','Graphic Artist'],
+  strings: ['SEO Specialist','Web Developer','Content Writer'],
   typeSpeed: 80,
   backSpeed: 40,
   backDelay: 2000,
@@ -85,3 +85,50 @@ emailjs.sendForm('service_35gb4sh','template_ma46jfb','#contact-form','VrEwk9NSL
 }
 
 contactForm.addEventListener('submit', sendEmail)
+
+/*===== SHOW SCROLL UP =====*/
+const scrollUp = () => {
+  const scrollUp = document.getElementById('scroll-up')
+  //When the scroll is higher than 350 viewport height, add the show-scroll class
+  this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+                      : scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
+
+/*===== SHOW SECTIONS ACTIVE LINK =====*/
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+  const scrollDown = window.scrollY
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 58,
+          sectionId = current.getAttribute('id'),
+          sectionsClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']')
+
+    if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+      sectionsClass.classList.add('active-link')
+    }else{
+      sectionsClass.classList.remove('active-link')
+    }
+             
+  })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*===== SCROLL REVEAL ANIMATION ======*/
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2000,
+  //reset: true, // Animation repeat
+})
+
+sr.reveal(`.home-content, .resume-content:nth-child(1), .footer-container`)
+sr.reveal(`.home-data, .resume-content:nth-child(2)`, {delay: 300, origin: 'bottom'})
+
+sr.reveal(`.about-content, .contact-content`, {origin: 'bottom'})
+sr.reveal(`.about-image, .contact-form`, {delay: 300})
+
+sr.reveal(`.project-card`, {interval: 100})
