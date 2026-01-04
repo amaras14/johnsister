@@ -2,6 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
   :root {
   --header-height: 3.5rem;
+
+  /*====== Colors =====*/
+
+  /*
+    Color moe HSL(Hue, saturation, lightness)
+
+    Change favorite color:
+
+    Default Cyan: hsl(180, 80%, 48%)
+    Blue: hsl(220, 90% 64%) - Pink: hsl(300, 70%, 64%)
+    Green: hsl(110, 70%, 64%) - Purple: hsl(255, 70%, 64%)
+    Orange: hsl(15, 80%, 64%) - Red: hsl(358, 80%, 64%)
+
+    For more color visit: https://htmlcolorcodes.com/
+    -> Choose any color
+    -> Copy the color mode (HSL)
+  */
   --hue: 180;
   --first-color: hsl(var(--hue), 80%, 48%);
   --first-color-alt: hsl(var(--hue), 80%, 44%);
@@ -214,6 +231,11 @@ img {
   box-shadow: 0 2px 16px hsla(0, 0%, 0%, 0.6);
 }
 
+/*===== ACTIVE LINK ======*/
+.active-link::after {
+  width: 60%;
+}
+
 /*====== HOME ======*/
 .home-container {
   row-gap: 4rem;
@@ -256,7 +278,7 @@ img {
 
 .home-link {
   color: var(--white-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: transform .4s color .4s;
 }
 
@@ -277,6 +299,55 @@ img {
 .home-title {
   font-size: var(--bigger-font-size);
   color: var(--first-color);
+  animation: lights 5s 750ms linear infinite;
+}
+@keyframes lights {
+
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
 }
 
 .home-buttons {
@@ -432,7 +503,7 @@ img {
 
 /*===== RESUME =====*/
 .resume-container {
-  row-gap: 5rem;
+  row-gap: 2rem;
 }
 .resume-content {
   row-gap: 1rem;
@@ -539,18 +610,120 @@ img {
 
 .contact-link {
   color: var(--white-color);
-  font-size: 1.5rem;
-  transition: transform .4sm color .4s;
+  font-size: 2rem;
+  transition: transform .4s color .4s;
 }
-
 .contact-link:hover {
   transform: translateY(-.25rem);
   color: var(--first-color);
 }
 
+/*===== FOOTER =====*/
+.footer {
+  padding-block: 5rem 2rem;
+}
+
+.footer-container {
+  row-gap: 2rem;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-logo {
+  color: var(--white-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  justify-self: center;
+  margin-bottom: 1rem;
+  transition: color .4s;
+}
+
+.footer-logo:hover {
+  color: var(--first-color);
+}
+.footer-links {
+  column-gap: 2rem;
+}
+
+.footer-link {
+  color: var(--white-color);
+  transition: color .4s;
+}
+
+.footer-link:hover {
+  color: var(--first-color);
+}
+
+.footer-social {
+  column-gap: 1.5rem;
+}
+
+.footer-social-link {
+  color: var(--white-color);
+  font-size: 2rem;
+  transition: transform .4s color .4s;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-.25rem);
+  color: var(--first-color);
+}
+
+.footer-copy {
+  display: block;
+  text-align: center;
+  font-size: var(--small-font-size);
+  margin-top: 3rem;
+  color: var(--gray-color);
+}
+
+
+/*===== SCROLL BAR =====*/
+::-webkit-scrollbar{
+  width: .6rem;
+  background-color: hsl(0, 0%, 15%);
+  border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb{
+  background-color: hsl(0, 0%, 25%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(0, 0%, 35%);
+}
+
+
+/*==== SCROLL UP =====*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, .5);
+  display: inline;
+  padding: 6px;
+  color: var(--white-color);
+  font-size: 1.25rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.5rem);
+}
+
+/*===== SHOW SCROLL =====*/
+.show-scroll {
+  bottom: 3rem;
+}
 
 /*=====BREAKPOINTS======*/
-
 @media screen and (max-width: 320px){
   .container{
     margin-inline: 1rem;
@@ -633,6 +806,7 @@ img {
 
   .section {
     padding-block: 7rem 4rem;
+    margin-bottom: 4rem;
   }
 
   .section-title{
@@ -716,8 +890,8 @@ img {
     margin-top: 1rem;
   }
 
-  .resume {
-    padding-block: 8rem 4rem;
+  .resume-section{
+    padding-block: 7rem 4rem;
   }
   
   .resume-container {
@@ -733,7 +907,7 @@ img {
   }
 
   .contact {
-    padding-block: 8rem 4rem;
+    padding-block: 7rem 4rem;
   }
 
   .contact-container {
@@ -753,7 +927,37 @@ img {
     justify-self: center;
     margin-top: 1rem;
   }
-  .contact-are {
+  .contact-area {
     height: 14rem;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    
+  }
+  .footer-logo {
+    font-size: var(--h2-font-size);
+    justify-self: flex-start;
+    margin-bottom: 0;
+  }
+  .footer-links {
+    column-gap: 3rem;
+  }
+
+  .footer-social {
+    justify-self: flex-end;
+  }
+
+  .scrollup {
+    right: 3rem;
+  }
+}
+
+/* === FOR 2K RESOLUTION (2048 x 1152 X 2048 x 1536 === */
+
+@media screen and (min-width: 2048px) {
+  body {
+    zoom: 1.2;
   }
 }
