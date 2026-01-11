@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <!-- FAVICON-->
    <link rel="shortcut icon" href="image/johnsfavicon.png" type="image/x-icon">
 
@@ -16,6 +16,7 @@
 <body>
   <!-- Header -->
   <header class="header" id="header">
+    
     <nav class="nav container">
       <a href="#" class="nav-logo">JohnS</a>
 
@@ -31,13 +32,16 @@
             <a href="#projects" class="nav-link">Projects</a>
           </li>
           <li>
+            <a href="#certificate" class="nav-link">Certificates</a>
+          </li>
+          <li>
             <a href="#resume" class="nav-link">Resume</a>
           </li>
           <li>
             <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
-
+        
         <!-- CLOSE BUTTON -->
         <div class="nav-close" id="nav-close">
           <i class="ri-close-large-line"></i>
@@ -48,11 +52,15 @@
        <div class="nav-toggle" id="nav-toggle">
           <i class="ri-menu-line"></i>
        </div>
+
     </nav>
   </header>
-  
   <!-- MAIN -->
   <main class="main">
+    <button id="theme-switch">
+            <i class="ri-sun-fill"></i>
+            <i class="ri-moon-fill"></i>
+        </button>
     <!-- HOME -->
     <section class="home-section" id="home">
       <div class="home-container container grid">
@@ -90,7 +98,7 @@
           </p>
 
           <div class="home-buttons">
-            <a href="assets/johnsister-cv.pdf" download="johnsister-cv.pdf" class="button">Download CV</a>
+            <a href="assets/johnsister-cv.pdf" download="" class="button">Download CV</a>
             <a href="#projects" class="button button-ghost">Projects</a>
           </div>
         </div>
@@ -209,13 +217,22 @@
     </section>
 
         <!-- Certificate -->
-     <section class="certificate-section" id="projects">
+     <section class="certificate-section" id="certificate">
       <h2 class="section-title">Certificates</h2>
-      <div class="project-container container grid">
-        <article class="project-card">
+      <div class="certificate-container container grid">
+        <article class="certificate-card">
           <img src="assets/johnsister-ahref-cert.webp" alt="image" class="certificate-img">
         </article>
-                </div>
+
+        <article class="certificate-card">
+          <img src="https://placehold.co/600x400.png" alt="image" class="certificate-img">
+        </article>
+
+        <article class="certificate-card">
+          <img src="https://placehold.co/600x400.png" alt="image" class="certificate-img">
+        </article>
+
+        </div>
       </div>
       </section>
 
@@ -415,7 +432,6 @@
   <script
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
+<script type="text/javascript" src="darkmode.js" defer></script>
 </body>
 </html>
-
-
